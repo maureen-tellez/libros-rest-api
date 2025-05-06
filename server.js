@@ -3,15 +3,15 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const app = express();
-const port = 5555;
+const port = process.env.PORT || 4000;
 
 //Database connection
-mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true});
+mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true});
 
 const db = mongoose.connection;
 
 db.on("Error", (error) => console.error(error))
-db.once("Open", () => console.log("Maravillosa, espectacular conexion"))
+db.once("Open", () => console.log("Conexion exitosa"))
 
 //Middleware
 app.use(express.json());

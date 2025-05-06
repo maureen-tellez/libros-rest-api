@@ -19,9 +19,9 @@ app.use(express.urlencoded({extended: true}));
 
 /*
 app.get("/", (req, res) => {
-    res.send("Hola putooooos");
+    res.send("Hello world");
 });
 */
 
 app.use("/libros", require("./routes/librosRoutes"))
-app.listen(port, () => console.log("El servidor esta mamalon"));
+app.listen(port, () => console.log("El servidor esta fallando"));
